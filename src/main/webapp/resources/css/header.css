@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.top{
+    background-color: #4e71bf;
+    width: 100%;
+    height: 10%;
+}
+
+.top > *{
+    display: inline-block;
+    vertical-align:middle;
+
+    /*글자를 드래그 하지 못하도록 설정*/
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none
+}
+
+.logo{
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+.login{
+    font-size: 40px;
+    text-align: center;
+}
+
+.input-text{
+    height: 30px;
+    width: 300px;
+    text-align: left;
+    background-image: url("/resources/img/icon0.png");      /*배경 이미지로 아이콘 이미지 삽입*/
+    background-repeat: no-repeat;                           /*이미지가 작을경우 반복되어 나오는것을 예방*/
+    background-position: 10px center;                        /*input 안에서 이미지를 이동*/
+    padding-left: 40px;
+    box-sizing: border-box;
+}
