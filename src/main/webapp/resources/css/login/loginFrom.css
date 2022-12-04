@@ -1,0 +1,30 @@
+from{
+    display: block;
+}
+
+from div{
+    margin-bottom: 15px;
+}
+
+label{
+    display: block;
+    margin-bottom: 0.5rem;
+    cursor: default;
+}
+
+from input {
+    cursor: text;
+    background-color: #fff;
+    background-image: none;
+    border: 0.05rem solid #ccc;
+    font-size: 1rem;
+    color: #55595c;
+    margin-left: 0.7rem;
+    padding: 0.25rem 0.7rem;
+    width: calc(100% - 0.7rem);
+}
+
+from[class=loginFrom]{
+    margin: 0 auto;
+    width: 28rem;
+}

@@ -1,14 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <link href="/resources/css/header.css" rel="stylesheet" type="text/css">
-    <link href="/resources/css/nav.css" rel="stylesheet" type="text/css">
-
+    <title>Dlog</title>
     <style>
-        header{
-            background-color: lightgray;
-            height: 100px;
-        }
         nav{
             background-color: #339999;
             color: white;
@@ -27,6 +22,8 @@
             border: 1px solid black;
         }
     </style>
+    <link href="/resources/css/header.css" rel="stylesheet" type="text/css">
+    <link href="/resources/css/nav.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <header>

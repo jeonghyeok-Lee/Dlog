@@ -6,10 +6,12 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<head>
+    <link href="/resources/css/header.css" rel="stylesheet" type="text/css">
+</head>
 <body>
+<div class="header">
     <img src="/resources/img/book.jpg" class="logo">
     <input type="text" placeholder="Search or jump to" class="input-text">
-    <span class="login">login</span>
-</body>
-</html>
+    <span class="login"><a href="/login">login</a></span>
+</div>
