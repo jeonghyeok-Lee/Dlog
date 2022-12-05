@@ -23,6 +23,7 @@ public class UserController {
 
     @RequestMapping(value = "/getUserList", method = RequestMethod.GET)
     public String getUserList(Model model) throws Exception{
+        // jsp파일에서 사용할 key-value 설정
         model.addAttribute("userList", userService.getUserList());
         return "user/userList";
     }
@@ -32,6 +33,12 @@ public class UserController {
         userService.insertUser(userVO);
 
         // 유저를 추가한 후 해당 페이지로 이동
-        return "redirect:/user/getUserList";
+        return "redirect:/user/userList";
+    }
+
+    @RequestMapping(value = "/signupForm", method = RequestMethod.GET)
+    public String signupForm(Model model) throws Exception {
+        model.addAttribute("userVO", new UserVO());
+        return "login/signupForm";
     }
 }

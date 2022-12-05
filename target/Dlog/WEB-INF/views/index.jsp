@@ -8,7 +8,6 @@
             background-color: #339999;
             color: white;
             width: 200px;
-            height: 100%;
             float: left;
         }
         section{
@@ -26,11 +25,11 @@
     <link href="/resources/css/nav.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <header>
-        <jsp:include page="header/mainHeader.jsp"></jsp:include>
+    <header id="header">
+        <%@include file="common/header.jsp"%>
     </header>
     <nav>
-        <h2>Nav</h2>
+        <%@include file="common/side.jsp"%>
     </nav>
     <section>
         <p>Section</p>

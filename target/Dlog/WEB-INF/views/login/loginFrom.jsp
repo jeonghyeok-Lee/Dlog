@@ -12,19 +12,27 @@
     <link href="/resources/css/login/loginFrom.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<header>
-    <jsp:include page="/WEB-INF/views/header/mainHeader.jsp"/>
-</header>
 <article>
     <h1>로그인</h1>
     <from class="loginFrom">
-        <div class="">
+        <div class="id-pw">
             <label for="userIdInput">ID</label>
             <input type="text" class="userIdInput" id="userIdInput">
         </div>
-        <div class="">
+        <div class="id-pw">
             <label for="userPwInput">Password</label>
-            <input type="text" class="userPwInput" id="userPwInput">
+            <input type="password" class="userPwInput" id="userPwInput">
+        </div>
+        <div class="autoLogin">
+            <label class="checkbox">
+                <input type="checkbox">
+                <span>자동 로그인</span>
+            </label>
+        </div>
+        <a href="#" class="recovery">[아이디/비밀번호 찾기]</a>
+        <div class="login">
+            <a href="#">계정만들기</a>
+            <button type="submit" class="">로그인</button>
         </div>
     </from>
 </article>

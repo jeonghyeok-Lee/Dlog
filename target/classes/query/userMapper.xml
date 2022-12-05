@@ -12,7 +12,7 @@
     </select>
 
     <select id="getUserList" resultType="UserVO">
-        select *
+        select userNo,userId,userPw,userName,userNicName,userBirth,userEmail,userConsent,userAddDate
         from User
     </select>
 
