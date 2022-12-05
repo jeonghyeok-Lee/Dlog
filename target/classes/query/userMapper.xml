@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="LoginService">
+<!--  mapper들과 구분을 위해 보통 '패키지명(com.freehoon.web) + 프로그램명(board) + 파일명(boardMapper)' 조합을 많이 사용  -->
+    <!-- 하지만 가독성이 떨어지므로 서비스명으로 줄여서 사용-->
+
+    
+    <select id="getUserInfo" resultType="UserVO">
+        select *
+        from User
+        where userNo = #{userNo}
+    </select>
+
+    <select id="getUserList" resultType="UserVO">
+        select *
+        from User
+    </select>
+
+    <select id="insertUser" parameterType="UserVO">
+        insert into User(userId,userPw,userName,userNicName,userBirth,userEmail,userConsent)
+        values (#{userId},#{userPw},#{userName},#{userNicName},#{userBirth},#{userEmail},#{userConsent})
+    </select>
+
+    <select id="updateUser" parameterType="UserVO">
+        update User set
+                        userPw = #{userPw},
+                        userName = #{userName},
+                        userNicName = #{userNicName},
+                        userBirth = #{userBirth},
+                        userEmail = #{userEmail},
+                        userConsent = #{userConsent}
+        where userNo = #{userNo}
+    </select>
+
+    <delete id="deleteUser" parameterType="int">
+        DELETE FROM User
+        WHERE userNo = #{userNo}
+    </delete>
+</mapper>
