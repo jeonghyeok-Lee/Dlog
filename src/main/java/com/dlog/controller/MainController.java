@@ -24,11 +24,6 @@ public class MainController {
         return "/user/userInfo";
     }
 
-    @RequestMapping("/login")
-    public String loginPage(){
-        return "/login/loginFrom";
-    }
-
     @RequestMapping("/connection")
     public String dbConnection(){
         System.out.println("db에 접근함" + mainService.getDbTime());
