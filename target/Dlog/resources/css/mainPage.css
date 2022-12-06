@@ -1,0 +1,17 @@
+.container{
+    margin-left: 200px;
+    margin-right: 200px;
+    border-bottom: 1px solid black;
+}
+
+.common{
+    padding-top: 70px;
+    padding-bottom: 70px;
+    text-align: center;
+}
+
+.title-context{
+    font-size: 40px;
+    font-weight: 600;
+}
+

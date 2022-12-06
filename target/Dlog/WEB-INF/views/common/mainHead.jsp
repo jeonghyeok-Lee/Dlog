@@ -16,6 +16,5 @@
 
 <%--custom css--%>
 <link href="/resources/css/mainHeader.css" rel="stylesheet" type="text/css">
-<link href="/resources/css/mainSide.css" rel="stylesheet" type="text/css">
 
 <%--script--%>
