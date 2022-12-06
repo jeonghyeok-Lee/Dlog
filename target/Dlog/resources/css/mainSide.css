@@ -1,0 +1,131 @@
+:root{
+    --color-border-default: #d0d7de;
+    --color-border-name: hsla(210,18%,87%,1);
+    --color-btn-default-bg: rgba(68,114,196,1);
+    --color-font-default: #24292f;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+aside{
+    min-height: 100vh;
+    width: 25%;
+    display: block;
+    border-color:hsla(210,18%,87%,1); ;
+    background-color: #8484ff;
+    border-bottom: 1px solid var(--color-border-default);
+}
+
+.sidebar{
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    min-height: 50vh;
+    max-height: 100vh;
+    flex-direction: column;
+    padding-right: 16px;
+    padding-left: 16px;
+    overflow: auto;
+}
+
+.name{
+    padding-top: 16px;
+    padding-bottom: 16px;
+    margin-bottom: 24px;
+    margin-top:16px;
+    border-bottom: 1px solid var(--color-border-default);
+}
+
+.loading-context{
+    min-height: 50vh;
+    flex: 1;
+    display: block;
+    position: relative;
+    height: 100%;
+}
+
+.dContainer{
+    margin-bottom: 24px;
+}
+
+h2{
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+h2.sideName{
+    display: flex;
+    font-size: 14px;
+    margin-bottom: 14px;
+    align-items: center;
+    font-weight: 600;
+    justify-content: space-between; /*h2와 a간의 간격을 주기 위해서*/
+}
+
+a{
+    text-decoration: none;
+}
+
+/*생성부분*/
+a.createDictionary{
+    padding: 3px 12px;
+    font-size: 12px;
+    line-height: 20px;
+    color:#ffffff;
+    background-color: var(--color-btn-default-bg);
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid;
+    border-radius: 6px;
+    vertical-align: middle; /*인라인 블록 등을 포함한 모든 인라인요소의 수직 정렬을 위해 사용*/
+}
+
+/*사전 입력부분을 감싸는 div*/
+.dictionary-search{
+    margin-top: 8px;
+    margin-bottom: 16px;
+}
+
+/*사전입력 부분*/
+.dictionary-search .dictionary-search-input{
+    margin-bottom: 16px;
+    display: block;
+    width: 100%;
+    background-color: #f6f8fa;
+    padding: 5px 12px;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--color-font-default);
+    vertical-align: middle;
+    background-repeat: no-repeat;   /* 배경 이미지의 반복 방법*/
+    background-position: right 8px center;
+    border: 1px solid var(--color-border-default);
+    border-radius: 6px;
+    box-shadow: inset 0 1px 0 rgba(208,215,222,0.2);
+}
+
+ul{
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+ul.dictionary-list{
+    list-style: none;
+}
+
+li{
+    display: list-item; /*리스트가 아닌 태그를 리스트처럼 바꾸어줌*/
+    text-align: -webkit-match-parent;
+}
+
+
