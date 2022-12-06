@@ -34,7 +34,7 @@
                 <span class="dropdown-create"></span>
             </summary>
             <details-menu class="dropdown-menu">
-                <a href="#" class="dropdown-item">로그인</a>
+                <a href="/login" class="dropdown-item">로그인</a>
             </details-menu>
         </details>
     </div>
