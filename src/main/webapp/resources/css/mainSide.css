@@ -5,12 +5,6 @@
     --color-font-default: #24292f;
 }
 
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 aside{
     min-height: 100vh;
     width: 25%;
