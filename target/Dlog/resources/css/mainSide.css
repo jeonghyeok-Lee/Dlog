@@ -7,11 +7,16 @@
 
 aside{
     min-height: 100vh;
-    width: 25%;
+    width: 20%;
     display: block;
     border-color:hsla(210,18%,87%,1); ;
-    background-color: #8484ff;
+    background-color: #ffffff;
     border-bottom: 1px solid var(--color-border-default);
+    max-width: 350px;
+}
+
+.aside-sidebar{
+    border: 1px solid var(--color-border-default);
 }
 
 .sidebar{
@@ -60,10 +65,6 @@ h2.sideName{
     align-items: center;
     font-weight: 600;
     justify-content: space-between; /*h2와 a간의 간격을 주기 위해서*/
-}
-
-a{
-    text-decoration: none;
 }
 
 /*생성부분*/
