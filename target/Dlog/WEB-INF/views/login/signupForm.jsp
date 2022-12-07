@@ -48,7 +48,7 @@
         <div class="card">
             <div class="card-header">Register</div>
             <div class="card-body">
-                <form:form name="form" id="form" class="form-signup" role="form" modelAttribute="userVO" method="post" action="${pageContext.request.contextPath}/user/insertUser">
+                <form:form name="form" id="form" class="form-signup" role="form" modelAttribute="UserVO" method="post" action="${pageContext.request.contextPath}/user/insertUser">
                     <div class="form-group row">
                         <label for="uid" class="col-md-3 col-form-label text-md-right">아이디</label>
                         <div class="col-md-5">
