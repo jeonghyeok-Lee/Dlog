@@ -28,8 +28,8 @@ a{
 }
 
 .default-container{
-    border-left: 1px solid var(--color-container-border);
-    border-right: 1px solid var(--color-container-border);
+/*    border-left: 1px solid var(--color-container-border);
+    border-right: 1px solid var(--color-container-border);*/
     display: flex;
     background-color: var(--color-background-main);
 }
