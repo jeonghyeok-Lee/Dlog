@@ -1,104 +1,80 @@
-h1{
-    font-size: 2.2rem;
-    font-weight: 700;
-    line-height: 1.1;
-    margin: 0 0 2rem;
-    display: block;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+.login{
+    height: 100%;
+}
+.login>.default-first-child>.login-title{
+    font-weight: 600;
+    font-size: 50px;
+    padding: 10px;
+    text-align: center;
 }
 
-from.loginFrom{
-    display: block;
-    margin: 0 auto;
+article.login-content{
+    vertical-align: center;
+    margin:0 auto;
     width: 28rem;
 }
 
-from.loginFrom div{
-    margin-bottom: 15px;
-}
-
-label{
-    display: block;
-    margin-bottom: 0.5rem;
-    cursor: default;
-}
-
-a{
-    text-decoration: none;
-}
-
-from.loginFrom div.id-pw input {
-    cursor: text;
-    background-color: #fff;
-    background-image: none;
-    border: 0.05rem solid #ccc;
-    font-size: 1rem;
-    color: #55595c;
-    margin-left: 0.7rem;
-    padding: 0.25rem 0.7rem;
+.userid, .password{
+    margin-left: 10px;
+    padding: 0.25rem 0.5rem;
     width: calc(100% - 0.7rem);
 }
 
-form input[type=checkbox]{
-    margin-left: -1.25rem;
-    margin-top: 0.25rem;
-    padding: 0;
-    position: absolute;
-    background-color: initial;
-    cursor: default;
-    appearance: auto;
-    border: initial;
+.login-userid,.login-title{
+    padding-bottom: 0.5rem;
 }
 
-from.loginFrom div.autoLogin label.checkbox{
+.login-input{
+    margin-bottom: 10px;
+}
+
+.login-option-first, .login-option-second{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.login-option-first > *{
+    display: flex;
     cursor: pointer;
-    font-weight: 400;
 }
 
-from.loginFrom a.recovery{
-    float: right;
-    color: #0275d8;
+.autologin-checkbox{
+    cursor: default;
 }
 
-from.loginFrom div.login{
+.find-id-pw{
+    margin-left: 40%;
+}
+
+.login-option-second{
     margin-top: 2rem;
     text-align: right;
+    display: flex;
 }
-
-from.loginFrom div.login a{
+.login-createUser{
     background-color: #fff;
     border: 0.0625rem solid #ccc;
     color: #373a3c!important;
     cursor: pointer;
     display: inline-block;
-    font-size: 1rem;
     font-size: .9rem;
     font-weight: 400;
     line-height: 1.5;
     padding: 0.2rem 0.7rem;
     text-align: center;
     text-decoration: none!important;
-    touch-action: manipulation;
-    user-select: none;
-    vertical-align: middle;
-    white-space: nowrap;
+    margin-left: auto;
 }
 
-from.loginFrom div.login button{
-    background-color: #fff;
-    border: 0.0625rem solid #ccc;
-    color: #373a3c;
+.login-btn{
+    background-color: #0275d8;
+    border-color: #0275d8;
+    color: #fff;
     cursor: pointer;
     display: inline-block;
-    font-size: 1rem;
     font-size: .9rem;
     font-weight: 400;
     line-height: 1.5;
-    margin: 0;
     padding: 0.2rem 0.7rem;
     text-align: center;
-    touch-action: manipulation;
-    user-select: none;
-    white-space: nowrap;
 }

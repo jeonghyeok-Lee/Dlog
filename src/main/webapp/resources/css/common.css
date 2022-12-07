@@ -2,6 +2,8 @@
     --color-fg-hint:#57606a;
     --color-border-default: #d0d7de;
     --color-a-font:#0275d8;
+    --color-background-main: rgba(246,248,250);
+    --color-container-border: #0275d8;
 }
 
 *{
@@ -23,4 +25,22 @@ a{
 .margin-lr-10{
     margin-left: 10px;
     margin-right: 10px;
+}
+
+.default-container{
+    border-left: 1px solid var(--color-container-border);
+    border-right: 1px solid var(--color-container-border);
+    display: flex;
+    background-color: var(--color-background-main);
+}
+
+.default-first-child{
+    background-color: #ffffff;
+    flex: auto;
+    padding-right: 32px;
+    padding-left: 32px;
+    margin-left: 100px;
+    margin-right: 100px;
+    border-right: 1px solid var(--color-border-default);
+    border-left: 1px solid var(--color-border-default);
 }

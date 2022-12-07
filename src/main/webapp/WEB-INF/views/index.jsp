@@ -13,9 +13,9 @@
 <%@include file="common/header.jsp" %>
 
 <%--메인부분--%>
-<section class="mainContent">
+<section class="mainContent default-container">
     <%@include file="common/mainSide.jsp"%>
-    <div class="article-container">
+    <div class="article-container default-first-child">
         <article class="container">
             <div class="title common">
                 <span class="title-context"> 사전을 제작하는 Dlog에 오신 것을 환영합니다.</span>
