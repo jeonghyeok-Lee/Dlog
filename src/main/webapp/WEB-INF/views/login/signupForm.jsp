@@ -6,14 +6,13 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page isELIgnored="false" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
     <title>회원가입</title>
-
-    <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <%@include file="../common/mainHead.jsp" %>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet"
@@ -24,18 +23,18 @@
     <script>
         $(document).on('click', '#btnSignup', function(e){
             e.preventDefault();
-
             $("#form").submit();
         });
 
         $(document).on('click', '#btnCancle', function(e){
             e.preventDefault();
 
-            $('#uid').val('');
-            $('#name').val('');
-            $('#pwd1').val('');
-            $('#pwd2').val('');
-            $('#email').val('');
+            $('#userId').val('');
+            $('#userName').val('');
+            $('#userPw').val('');
+            $('#userBrith').val('');
+            $('#userEmail').val('');
+            $('#userConsent').val(false);
             //location.href="${pageContext.request.contextPath}/home";
         });
 
@@ -43,12 +42,15 @@
 
 </head>
 <body>
-<article>
+<%--헤더부분--%>
+<%@include file="../common/header.jsp" %>
+
+<article style="margin-top: 20px">
     <div class="container  col-md-6" role="main">
         <div class="card">
-            <div class="card-header">Register</div>
+            <div class="card-header">회원가입</div>
             <div class="card-body">
-                <form:form name="form" id="form" class="form-signup" role="form" modelAttribute="UserVO" method="post" action="${pageContext.request.contextPath}/user/insertUser">
+                <form:form name="form" id="form" class="form-signup" role="form" modelAttribute="UserVO" method="post" action="/user/insertUser">
                     <div class="form-group row">
                         <label for="uid" class="col-md-3 col-form-label text-md-right">아이디</label>
                         <div class="col-md-5">
@@ -80,7 +82,7 @@
                     <div class="form-group row">
                         <label for="pwd" class="col-md-3 col-form-label text-md-right">생년월일</label>
                         <div class="col-md-5">
-                            <form:input path="userBirth" id="birth" class="form-control" placeholder="생년월일을 입력해주세요" />
+                            <form:input path="userBirth" id="birth" class="form-control" placeholder="ex)1999-07-17" />
                         </div>
                     </div>
 
@@ -95,18 +97,20 @@
                     </div>
 
                     <div class="form-group row">
-                        <div class="col-md-5">
-                            <form:checkbox path="userConsent" id="birth" class="form-control" />
+                        <div class="col-md-5" style="width: 5px">
+                            <form:checkbox path="userConsent" id="userConsent" class="form-control" />
                         </div>
-                        <label for="pwd" class="col-md-3 col-form-label text-md-right">수신동의</label>
+                        <label for="userConsent" class="col-md-3 col-form-label text-md-right">수신동의</label>
                     </div>
 
                 </form:form>
             </div>
         </div>
         <div style="margin-top:10px">
-            <button type="button" class="btn btn-sm btn-primary" id="btnSignup">회원가입</button>
-            <button type="button" class="btn btn-sm btn-primary" id="btnCancel">취소</button>
+            <div style="text-align: right">
+                <button type="button" class="btn btn-sm btn-primary" id="btnSignup">회원가입</button>
+                <button type="button" class="btn btn-sm btn-primary" id="btnCancel">취소</button>
+            </div>
         </div>
     </div>
 

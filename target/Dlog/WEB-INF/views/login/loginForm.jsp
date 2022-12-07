@@ -34,15 +34,15 @@
             </div>
             <div class="login-option-first">
                 <div class="autologin">
-                    <input type="checkbox" class="autologin-checkbox">
-                    <div class="autologin-title">자동 로그인</div>
+                    <input type="checkbox" id="checkbox" class="autologin-checkbox">
+                    <label for="checkbox" class="autologin-title">자동 로그인</label>
                 </div>
                 <div class="find-id-pw">
                     <a href="#" class="">[아이디/비밀번호 찾기]</a>
                 </div>
             </div>
             <div class="login-option-second">
-                <a href="#" class="login-createUser margin-lr-10">계정 만들기</a>
+                <a href="/signup" class="login-createUser margin-lr-10">계정 만들기</a>
                 <button class="login-btn" type="submit">
                     로그인
                 </button>
