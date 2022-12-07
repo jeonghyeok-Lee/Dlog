@@ -24,7 +24,7 @@
         <th>이메일</th>
         <th>동의여부</th>
     </tr>
-    <c:forEach items="${user}" var = "user">
+    <c:forEach items="${userList}" var = "user">
         <tr>
             <td>${user.userNo}</td>
             <td>${user.userId}</td>

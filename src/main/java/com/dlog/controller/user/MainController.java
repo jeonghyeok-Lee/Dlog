@@ -1,5 +1,6 @@
 package com.dlog.controller.user;
 import com.dlog.service.MainService;
+import com.dlog.service.user.UserService;
 import com.dlog.vo.user.UserVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -38,6 +39,12 @@ public class MainController {
     public String signupForm(Model model) throws Exception{
         model.addAttribute("UserVO", new UserVO());
         return "login/signupForm";
+    }
+
+    @GetMapping("/userInfo")
+    public String userInfo(Model model) throws Exception {
+        model.addAttribute("UserVO", new UserVO());
+        return "user/userInfo";
     }
 
     @RequestMapping("/connection")

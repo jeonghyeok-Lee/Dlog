@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import javax.inject.Inject;
 import java.util.List;
 
-@Service
+@Service("UserServiceImpl")
 public class UserServiceImpl implements UserService{
     private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
 

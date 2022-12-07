@@ -4,6 +4,7 @@ import com.dlog.service.user.UserService;
 import com.dlog.vo.user.UserVO;
 import org.mybatis.logging.Logger;
 import org.mybatis.logging.LoggerFactory;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -19,6 +20,7 @@ public class UserController {
     private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
     @Inject
+    @Qualifier("UserServiceImpl")
     private UserService userService;
 
     @RequestMapping(value = "/getUserList", method = RequestMethod.GET)
@@ -34,11 +36,5 @@ public class UserController {
 
         // 유저를 추가한 후 해당 페이지로 이동
         return "redirect:/user/userList";
-    }
-
-    @RequestMapping(value = "/signupForm", method = RequestMethod.GET)
-    public String signupForm(Model model) throws Exception {
-        model.addAttribute("userVO", new UserVO());
-        return "login/signupForm";
     }
 }

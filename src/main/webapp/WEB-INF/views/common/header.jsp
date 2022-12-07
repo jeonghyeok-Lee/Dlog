@@ -22,7 +22,7 @@
             </div>
         </div>
         <nav class="nav">
-            <a class="navigation-item" href="#">네비 1</a>
+            <a class="navigation-item" href="/connection">네비 1</a>
             <a class="navigation-item" href="#">네비 1</a>
             <a class="navigation-item" href="#">네비 1</a>
         </nav>

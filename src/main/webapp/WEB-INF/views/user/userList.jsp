@@ -6,13 +6,11 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page isELIgnored="false" %>
 <html>
 <head>
     <title>UserList</title>
-    <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script defer src="/resources/js/user/userList.js"></script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
@@ -21,7 +19,7 @@
 
 </head>
 <body>
-    <div class="container">
+    <div class="container" style="max-width: 1600px">
         <h2>사용자 리스트</h2>
 
         <%--데이터 출력장소--%>
@@ -43,15 +41,15 @@
                 <tbody>
                     <c:choose>
                         <%--데이터가 없다면--%>
-                        <c:when test="${empty userList}">
+                        <c:when test="${userList == null}">
                             <tr>
                                 <td colspan="9" align="center">데이터가 없습니다.</td>
                             </tr>
                         </c:when>
-                        <c:when test="${!empty userList}">
+                        <c:when test="${userList != null}">
                             <c:forEach var="list" items="${userList}">
                                 <tr>
-                                    <td><c:out value="${list.userNo}"/></td>
+                                    <td>${list.userNo}</td>
                                     <td><c:out value="${list.userId}"/></td>
                                     <td><c:out value="${list.userPw}"/></td>
                                     <td><c:out value="${list.userName}"/></td>

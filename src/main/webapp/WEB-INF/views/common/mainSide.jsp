@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<aside>
+<aside class="aside-sidebar">
   <div class="sidebar">
     <div class="name">사용자 명</div>
     <loading-context class="loading-context">

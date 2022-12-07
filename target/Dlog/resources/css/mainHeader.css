@@ -2,6 +2,7 @@
     --color-header-text: rgba(255,255,255,0.7);
     --color-header-bg: #24292f;
     --color-header-search-bg: #24292f;
+    --color-border-default: #d0d7de;
 }
 
 .header{
