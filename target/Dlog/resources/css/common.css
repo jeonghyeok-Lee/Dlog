@@ -1,6 +1,7 @@
 :root{
     --color-fg-hint:#57606a;
     --color-border-default: #d0d7de;
+    --color-a-font:#0275d8;
 }
 
 *{
@@ -11,6 +12,7 @@
 
 a{
     text-decoration: none;
+    color:var(--color-a-font);
 }
 
 .margin-tb-10{
