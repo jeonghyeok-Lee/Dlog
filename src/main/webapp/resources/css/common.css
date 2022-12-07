@@ -1,3 +1,8 @@
+:root{
+    --color-fg-hint:#57606a;
+    --color-border-default: #d0d7de;
+}
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -6,4 +11,14 @@
 
 a{
     text-decoration: none;
+}
+
+.margin-tb-10{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.margin-lr-10{
+    margin-left: 10px;
+    margin-right: 10px;
 }

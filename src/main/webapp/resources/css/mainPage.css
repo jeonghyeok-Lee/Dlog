@@ -1,7 +1,31 @@
+:root{
+    --color-container-border: #0275d8;
+    --color-background-main: rgba(246,248,250);
+}
+
+.mainContent{
+    border-left: 1px solid var(--color-container-border);
+    border-right: 1px solid var(--color-container-border);
+    display: flex;
+    background-color: var(--color-background-main);
+}
+
+.article-container{
+    background-color:#ffffff;
+    flex: auto;
+    padding-right: 32px;
+    padding-left: 32px;
+    width: 66.5%;
+    margin-left: 100px;
+    margin-right: 100px;
+    border-right: 1px solid var(--color-border-default);
+    border-left: 1px solid var(--color-border-default);
+}
+
 .container{
     margin-left: 200px;
     margin-right: 200px;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--color-border-default);
 }
 
 .common{
@@ -11,7 +35,60 @@
 }
 
 .title-context{
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 600;
 }
 
+.admission-code-title{
+    font-weight: 400;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.code-input{
+    border-radius: 6px;
+    line-height: 20px;
+    vertical-align: middle;
+    box-shadow: none;
+    width: 300px;
+    height: 40px;
+}
+
+.hint{
+    margin-top: 5px;
+    color: var(--color-fg-hint);
+    font-size: 12px;
+}
+
+.title-name{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.notification, .popular-list{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.notification-container, .popular-list-container{
+    border: 1px solid var(--color-container-border);
+    border-top: 3px solid var(--color-container-border);
+}
+
+.contents-list{
+    padding-top:20px;
+    padding-bottom: 20px;
+}
+
+.title-name{
+    text-align: left;
+    padding-bottom: 10px;
+    border-bottom:1px solid var(--color-container-border);
+}
+
+.contents-list-link{
+    display: block;
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid var(--color-container-border);
+}
