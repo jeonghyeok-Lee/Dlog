@@ -4,7 +4,6 @@
 <!--  mapper들과 구분을 위해 보통 '패키지명(com.freehoon.web) + 프로그램명(board) + 파일명(boardMapper)' 조합을 많이 사용  -->
     <!-- 하지만 가독성이 떨어지므로 서비스명으로 줄여서 사용-->
 
-    
     <select id="getUserInfo" resultType="UserVO">
         select *
         from User
@@ -17,8 +16,16 @@
     </select>
 
     <select id="insertUser" parameterType="UserVO">
-        insert into User(userId,userPw,userName,userNicName,userBirth,userEmail,userConsent)
-        values (#{userId},#{userPw},#{userName},#{userNicName},#{userBirth},#{userEmail},#{userConsent})
+        insert into User(userId,userPw,userName,userNicName,userBirth,userEmail,userConsent,userGender)
+        values (
+                #{userId},
+                #{userPw},
+                #{userName},
+                #{userNicName},
+                #{userBirth},
+                #{userEmail},
+                #{userConsent},
+                #{userGender})
     </select>
 
     <select id="updateUser" parameterType="UserVO">
@@ -28,7 +35,8 @@
                         userNicName = #{userNicName},
                         userBirth = #{userBirth},
                         userEmail = #{userEmail},
-                        userConsent = #{userConsent}
+                        userConsent = #{userConsent},
+                        userGender = #{userGender}
         where userNo = #{userNo}
     </select>
 

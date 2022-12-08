@@ -25,21 +25,21 @@ public class UserDAOImpl implements UserDAO{
 
     @Override
     public UserVO getUserInfo(int userNo) throws Exception {
-        return sqlSession.selectOne("LoginService.getUserInfo");
+        return sqlSession.selectOne("LoginService.getUserInfo",userNo);
     }
 
     @Override
     public int insertUser(UserVO userVO) throws Exception {
-        return sqlSession.insert("LoginService.insertUser");
+        return sqlSession.insert("LoginService.insertUser",userVO);
     }
 
     @Override
     public int updateUser(UserVO userVO) throws Exception {
-        return sqlSession.update("LoginService.updateUser");
+        return sqlSession.update("LoginService.updateUser",userVO);
     }
 
     @Override
     public int deleteUser(int userNo) throws Exception {
-        return sqlSession.delete("LoginService.deleteUser");
+        return sqlSession.delete("LoginService.deleteUser",userNo);
     }
 }

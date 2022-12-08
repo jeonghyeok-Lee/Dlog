@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="NoticeService">
+    <select id="getNoticeInfo" resultType="NoticeVO">
+        select *
+        from Notice
+        where noticeNo = #{noticeNo}
+    </select>
+
+    <select id="getNoticeList" resultType="NoticeViewVO">
+        select *
+        from Notice_vw
+    </select>
+
+    <select id="getNoticeListNum" resultType="NoticeVO">
+        select *
+        from Notice
+    </select>
+
+    <select id="insertNotice" parameterType="NoticeVO">
+        insert into Notice(noticeWriter, noticeTitle, noticeContent)
+        values (
+                #{noticeWriter},
+                #{noticeTitle},
+                #{noticeContent}
+               )
+    </select>
+
+    <select id="updateNotice" parameterType="NoticeVO">
+        update Notice set
+                          noticeWriter = #{noticeWriter},
+                          noticeTitle = #{noticeTitle},
+                          noticeContent = #{noticeContent}
+        where noticeNo = #{noticeNo}
+    </select>
+
+    <delete id="deleteUser" parameterType="int">
+        DELETE FROM Notice
+        WHERE noticeNo = #{noticeNo}
+    </delete>
+</mapper>
