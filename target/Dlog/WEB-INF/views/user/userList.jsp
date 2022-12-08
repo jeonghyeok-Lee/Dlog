@@ -16,11 +16,16 @@
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
           integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
           crossorigin="anonymous">
+    <%@include file="../common/mainHead.jsp" %>
 
 </head>
 <body>
+<%--헤더부분--%>
+<%@include file="../common/header.jsp" %>
+
+
     <div class="container" style="max-width: 1600px">
-        <h2>사용자 리스트</h2>
+        <h2 style="margin-top: 50px; margin-bottom: 20px">사용자 리스트</h2>
 
         <%--데이터 출력장소--%>
         <div class="table-responsive">
@@ -36,6 +41,7 @@
                         <th>Email</th>
                         <th>Consent</th>
                         <th>AddDate</th>
+                        <th>Gender</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -58,6 +64,7 @@
                                     <td><c:out value="${list.userEmail}"/></td>
                                     <td><c:out value="${list.userConsent}"/></td>
                                     <td><c:out value="${list.userAddDate}"/></td>
+                                    <td><c:out value="${list.userGender}"/></td>
                                 </tr>
                             </c:forEach>
                         </c:when>
