@@ -34,20 +34,23 @@
             <div class="notification common">
                 <div class="notification-container">
                     <div class="title-name margin-tb-10 margin-lr-10">
-                        <a href="#" class="">
+                        <a href="/noticeList" class="">
                             공지사항
                         </a>
                     </div>
                     <div class="contents-list margin-tb-10 margin-lr-10">
                         <c:choose>
-                            <c:when test="${empty notification}">
+                            <c:when test="${empty noticeList}">
                                 <div class="non-notification">공지사항이 없습니다.</div>
                             </c:when>
-                            <c:when test="${!empty notification}">
-                                <c:forEach var="notice" items="${notification}">
-                                    <%--개수제한 필요--%>
-                                    <a href="/notice/${notice.noticeNo}"
-                                       class="contents-list-link">${notice.noticeName}</a>
+                            <c:when test="${!empty noticeList}">
+                                <c:set var="noticeLength" value="${noticeList.size()}"/>
+                                <c:forEach var="notice"
+                                           items="${noticeList}"
+                                           varStatus="status">
+                                    <c:if test="${status.index < 5}">
+                                        <a href="#" class="contents-list-link">${noticeList[noticeLength-status.count].noticeTitle}</a>
+                                    </c:if>
                                 </c:forEach>
                             </c:when>
                         </c:choose>
