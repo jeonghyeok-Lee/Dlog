@@ -72,9 +72,13 @@
                                 <div class="non-dictionary">인기사전이 없습니다.</div>
                             </c:when>
                             <c:when test="${!empty dictionaryList}">
-                                <c:forEach var="dictionary" items="${dictionaryList}">
-                                    <a href="/dictionary/${dictionary.dNo}"
-                                       class="contents-list-link">${dictionary.dName}</a>
+                                < <c:set var="dictionaryLength" value="${dictionaryList.size()}"/>
+                                <c:forEach var="dictionary"
+                                           items="${dictionaryList}"
+                                           varStatus="status">
+                                    <c:if test="${status.index < 5}">
+                                        <a href="#" class="contents-list-link">${dictionaryList[dictionaryLength-status.count].dictionaryTitle}</a>
+                                    </c:if>
                                 </c:forEach>
                             </c:when>
                         </c:choose>

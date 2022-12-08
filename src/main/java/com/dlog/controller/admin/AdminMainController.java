@@ -2,11 +2,12 @@ package com.dlog.controller.admin;
 
 
 import com.dlog.service.admin.NoticeService;
+import com.dlog.vo.admin.NoticeVO;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.inject.Inject;
 
@@ -25,10 +26,19 @@ public class AdminMainController {
         return "index";
     }
 
-    @GetMapping("/noticeList")
-    public String notice(Model model) throws Exception {
-        model.addAttribute("noticeList",noticeService.getNoticeList());
-        return "admin/notice/noticeList";
+    // 공지사항 작성 페이지
+    @GetMapping("/noticeForm")
+    public String noticeForm(){
+        return "admin/notice/noticeForm";
     }
+
+
+    @PostMapping(value = "/saveNotice")
+    public  String saveNoticeForm(@ModelAttribute("NoticeVO")NoticeVO noticeVO, RedirectAttributes rttr) throws Exception{
+        noticeService.insertNotice(noticeVO);
+        return "redirect:admin/notice/noticeForm";
+
+    }
+
 
 }

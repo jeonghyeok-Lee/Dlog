@@ -40,7 +40,7 @@
 
 
 <div class="container" style="max-width: 1600px">
-  <h2 style="margin-top: 50px; margin-bottom: 20px">사용자 리스트</h2>
+  <h2 style="margin-top: 50px; margin-bottom: 20px">공지사항</h2>
 
   <%--데이터 출력장소--%>
   <div class="table-responsive">
@@ -63,13 +63,14 @@
           </tr>
         </c:when>
         <c:when test="${noticeList != null}">
-          <c:forEach var="list" items="${noticeList}">
+          <c:set var="noticeLength" value="${noticeList.size()}"/>
+          <c:forEach var="list" items="${noticeList}" varStatus="status">
             <tr>
-              <td>${list.noticeNo}</td>
-              <td>${list.noticeTitle}</td>
-              <td>${list.userNicName}</td>
-              <td>${list.noticeViews}</td>
-              <td>${list.noticeDate}</td>
+              <td>${noticeList[noticeLength-status.count].noticeNo}</td>
+              <td><a href="#" class="">${noticeList[noticeLength-status.count].noticeTitle}</a></td>
+              <td>${noticeList[noticeLength-status.count].userNicName}</td>
+              <td>${noticeList[noticeLength-status.count].noticeViews}</td>
+              <td>${noticeList[noticeLength-status.count].noticeDate}</td>
             </tr>
           </c:forEach>
         </c:when>

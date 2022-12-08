@@ -20,4 +20,5 @@ public interface NoticeService {
     public void updateNotice(NoticeVO noticeVO) throws Exception;
 
     public void deleteNotice(int noticeNo) throws Exception;
+
 }
