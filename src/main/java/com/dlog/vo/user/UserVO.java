@@ -3,15 +3,17 @@ package com.dlog.vo.user;
 import java.util.Date;
 
 public class UserVO {
-    private int userNo;
-    private String userId;
-    private String userPw;
-    private String userName;
-    private String userNicName;
-    private Date userBirth;
-    private String userEmail;
-    private boolean userConsent;
-    private Date userAddDate;
+    private int userNo;             // 유저번호
+    private String userId;          // 유저 아이디
+    private String userPw;          // 유저 패스워드
+    private String userName;        // 유저 이름
+    private String userNicName;     // 유저 닉네임
+    private Date userBirth;         // 유저 생일
+    private String userEmail;       // 유저 이메일
+    private boolean userConsent;    // 유저 동의 여부
+    private Date userAddDate;       // 유저 생성 날짜
+    private String userMgr;         // 유저 권한
+    private String userGender;      // 유저 성별
 
     public int getUserNo() {
         return userNo;
@@ -85,6 +87,22 @@ public class UserVO {
         this.userAddDate = userAddDate;
     }
 
+    public String getUserMgr() {
+        return userMgr;
+    }
+
+    public void setUserMgr(String userMgr) {
+        this.userMgr = userMgr;
+    }
+
+    public String getUserGender() {
+        return userGender;
+    }
+
+    public void setUserGender(String userGender) {
+        this.userGender = userGender;
+    }
+
     @Override
     public String toString() {
         return "UserVO{" +
@@ -97,6 +115,10 @@ public class UserVO {
                 ", userEmail='" + userEmail + '\'' +
                 ", userConsent=" + userConsent +
                 ", userAddDate=" + userAddDate +
+                ", userMgr='" + userMgr + '\'' +
+                ", userGender='" + userGender + '\'' +
                 '}';
     }
+
+
 }
