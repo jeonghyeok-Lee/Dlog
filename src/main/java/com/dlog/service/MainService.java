@@ -1,6 +1,6 @@
 package com.dlog.service;
 
-import com.dlog.vo.MainVO;
+import com.dlog.domain.vo.MainVO;
 
 
 public interface MainService {

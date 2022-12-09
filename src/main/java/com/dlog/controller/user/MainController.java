@@ -2,7 +2,7 @@ package com.dlog.controller.user;
 import com.dlog.service.MainService;
 import com.dlog.service.admin.NoticeService;
 import com.dlog.service.user.UserService;
-import com.dlog.vo.user.UserVO;
+import com.dlog.domain.vo.user.UserVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;

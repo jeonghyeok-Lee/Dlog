@@ -1,6 +1,6 @@
 package com.dlog.service.user;
 
-import com.dlog.vo.user.UserVO;
+import com.dlog.domain.vo.user.UserVO;
 
 import java.util.List;
 

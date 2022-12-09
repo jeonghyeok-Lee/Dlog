@@ -1,8 +1,8 @@
 package com.dlog.service.admin;
 
 
-import com.dlog.vo.admin.NoticeVO;
-import com.dlog.vo.admin.NoticeViewVO;
+import com.dlog.domain.vo.admin.NoticeVO;
+import com.dlog.domain.vo.admin.NoticeViewVO;
 
 import java.util.List;
 

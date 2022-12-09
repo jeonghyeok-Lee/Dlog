@@ -1,7 +1,7 @@
 package com.dlog.service.user;
 
-import com.dlog.dao.user.UserDAO;
-import com.dlog.vo.user.UserVO;
+import com.dlog.domain.dao.user.UserDAO;
+import com.dlog.domain.vo.user.UserVO;
 import org.mybatis.logging.Logger;
 import org.mybatis.logging.LoggerFactory;
 import org.springframework.stereotype.Service;

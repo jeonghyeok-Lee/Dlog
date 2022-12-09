@@ -1,8 +1,8 @@
 package com.dlog.service.admin;
 
-import com.dlog.dao.admin.NoticeDAO;
-import com.dlog.vo.admin.NoticeVO;
-import com.dlog.vo.admin.NoticeViewVO;
+import com.dlog.domain.dao.admin.NoticeDAO;
+import com.dlog.domain.vo.admin.NoticeVO;
+import com.dlog.domain.vo.admin.NoticeViewVO;
 import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;

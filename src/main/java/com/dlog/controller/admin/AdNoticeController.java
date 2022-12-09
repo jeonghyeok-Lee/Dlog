@@ -1,7 +1,7 @@
 package com.dlog.controller.admin;
 
 import com.dlog.service.admin.NoticeService;
-import com.dlog.vo.admin.NoticeVO;
+import com.dlog.domain.vo.admin.NoticeVO;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
