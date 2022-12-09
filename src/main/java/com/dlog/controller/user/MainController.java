@@ -55,13 +55,6 @@ public class MainController {
         return "user/login/signupForm";
     }
 
-    @RequestMapping("/connection")
-    public String dbConnection(){
-        System.out.println("db에 접근함" + mainService.getDbTime());
-        return "index";
-    }
-
-
     // 공지사항 페이지로 이동
     @GetMapping("/noticeList")
     public String notice(Model model) throws Exception {
