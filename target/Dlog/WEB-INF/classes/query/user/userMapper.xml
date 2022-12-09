@@ -10,6 +10,12 @@
         where userNo = #{userNo}
     </select>
 
+    <select id="getLoginUser" resultType="int">
+        select userNo
+        from User
+        where userId = #{userId} and userPw = #{userPw}
+    </select>
+
     <select id="getUserList" resultType="UserVO">
         select *
         from User

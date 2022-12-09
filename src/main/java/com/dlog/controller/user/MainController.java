@@ -7,9 +7,11 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 
 
 // dispathcer-servlet에서 받은 요청을 처리할 핸들러 선택
@@ -33,7 +35,7 @@ public class MainController {
 
     // 로그인 페이지
     @GetMapping("/login")
-    public String login(Model model){
+    public String loginForm(Model model){
         model.addAttribute("userVO", new UserVO());
 
         // 해당경로는 WEB-INF/views 에서의 경로임
@@ -60,6 +62,7 @@ public class MainController {
     }
 
 
+    // 공지사항 페이지로 이동
     @GetMapping("/noticeList")
     public String notice(Model model) throws Exception {
         model.addAttribute("noticeList",noticeService.getNoticeList());

@@ -8,11 +8,14 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping(value = "/user")
@@ -37,4 +40,26 @@ public class UserController {
         // 유저를 추가한 후 해당 페이지로 이동
         return "redirect:/user/userList";
     }
+
+    @PostMapping("/login.do")
+    public String login(HttpServletRequest request) throws Exception {
+        UserVO userVO = new UserVO();
+
+        userVO.setUserId(request.getParameter("userId"));
+        userVO.setUserPw(request.getParameter("userPw"));
+
+        int userNo = userService.getLoginUser(userVO);
+        System.out.println("userNo :"+userNo);
+        UserVO userData = userService.getUserInfo(userNo);
+        System.out.println("userData :"+userData);
+        HttpSession session =request.getSession();
+        if (userData != null) {
+            session.setAttribute("userData", userData);
+            return "redirect:../";
+        } else {
+            session.setAttribute("userData", null);
+            return "redirect:../login";
+        }
+    }
+
 }

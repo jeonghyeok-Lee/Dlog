@@ -13,6 +13,9 @@ public interface UserService {
     // 유저 정보가져오기
     public UserVO getUserInfo(int userNo) throws Exception;
 
+    // 유저 로그인 대상 번호 가져오기
+    public int getLoginUser(UserVO userVO ) throws Exception;
+
     // 유저 추가 -> DAO 인터페이스와는 차이가 있음을 인지
     public void insertUser(UserVO userVO) throws Exception;
 

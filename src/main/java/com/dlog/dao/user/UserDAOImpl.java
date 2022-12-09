@@ -29,6 +29,12 @@ public class UserDAOImpl implements UserDAO{
     }
 
     @Override
+    public int getLoginUser(UserVO userVO) throws Exception {
+        System.out.println("DAO : " + sqlSession.selectList("LoginService.getLoginUser",userVO));
+        return sqlSession.selectOne("LoginService.getLoginUser",userVO);
+    }
+
+    @Override
     public int insertUser(UserVO userVO) throws Exception {
         return sqlSession.insert("LoginService.insertUser",userVO);
     }

@@ -13,6 +13,9 @@ public interface UserDAO {
     // 유저 정보가져오기
     public UserVO getUserInfo(int userNo) throws Exception;
 
+    // 유저 로그인 대상 번호 가져오기
+    public int getLoginUser(UserVO userVO) throws Exception;
+
     // 유저 추가
     public int insertUser(UserVO userVO) throws Exception;
 
