@@ -38,11 +38,11 @@
             <details-menu class="dropdown-menu">
                 <c:choose>
                     <c:when test="${empty userData}">
-                        <a href="/login" class="dropdown-item">로그인</a>
+                        <a href="/loginForm" class="dropdown-item">로그인</a>
                     </c:when>
                     <c:when test="${!empty userData}">
                         <a href="#" class="dropdown-item">마이페이지</a>
-                        <a href="#" class="dropdown-item">로그아웃</a>
+                        <a href="/logoutUser" class="dropdown-item">로그아웃</a>
                     </c:when>
                 </c:choose>
             </details-menu>

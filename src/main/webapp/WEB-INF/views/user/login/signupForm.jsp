@@ -12,7 +12,7 @@
 <html>
 <head>
     <title>회원가입</title>
-    <%@include file="../common/mainHead.jsp" %>
+    <%@include file="../../common/mainHead.jsp" %>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet"
@@ -35,7 +35,6 @@
             $('#userBrith').val('');
             $('#userEmail').val('');
             $('#userConsent').val(false);
-            //location.href="${pageContext.request.contextPath}/home";
         });
 
     </script>
@@ -43,7 +42,7 @@
 </head>
 <body>
 <%--헤더부분--%>
-<%@include file="../common/header.jsp" %>
+<%@include file="../../common/header.jsp" %>
 
 <article style="margin-top: 20px">
     <div class="container  col-md-6" role="main">

@@ -16,12 +16,12 @@
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
           integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
           crossorigin="anonymous">
-    <%@include file="../common/mainHead.jsp" %>
+    <%@include file="../../common/mainHead.jsp" %>
 
 </head>
 <body>
 <%--헤더부분--%>
-<%@include file="../common/header.jsp" %>
+<%@include file="../../common/header.jsp" %>
 
 
     <div class="container" style="max-width: 1600px">

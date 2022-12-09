@@ -11,18 +11,18 @@
 <html>
 <head>
     <title>로그인 창</title>
-    <%@include file="../common/mainHead.jsp" %>
+    <%@include file="../../common/mainHead.jsp" %>
     <link href="/resources/css/login/loginFrom.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
 <%--헤더부분--%>
-<%@include file="../common/header.jsp" %>
+<%@include file="../../common/header.jsp" %>
 
 <%--메인 컨텐츠 부분--%>
 <section class="login default-container">
     <div class="default-first-child login-main-container">
-        <form method="post" class="login-form" id="login-form" action="/user/login.do">
+        <form method="post" class="login-form" id="login-form" action="/loginUser">
             <div class="login-title">로그인</div>
             <article class="login-content">
                 <div class="login-userid">
@@ -43,7 +43,7 @@
                     </div>
                 </div>
                 <div class="login-option-second">
-                    <a href="/signup" class="login-createUser margin-lr-10">계정 만들기</a>
+                    <a href="/signupForm" class="login-createUser margin-lr-10">계정 만들기</a>
                     <button class="login-btn" type="submit">
                         로그인
                     </button>
