@@ -162,26 +162,6 @@ details >summary:first-of-type{
     display: block;
 }
 
-/*.dropdown-menu:before{
-    left: auto;
-    right: 9px;
-    top: -16px;
-    border: 8px solid #0000;
-    border-bottom: 8px solid var(--color-border-default);
-    content: "";
-    display: inline-block;
-    position: absolute;
-}
-.dropdown-menu:after{
-    left: auto;
-    right: 10px;
-    top: -14px;
-    border: 7px solid #0000;
-    content: "";
-    display: inline-block;
-    position: absolute;
-}*/
-
 a.dropdown-item{
     color: #24292f;
     display: block;

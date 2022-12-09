@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page isELIgnored="false" %>
 <header id="header" class="header">
     <div>
         <a class="header-item header-link" href="http://localhost:8089/">Dlog</a>
@@ -22,7 +24,7 @@
             </div>
         </div>
         <nav class="nav">
-            <a class="navigation-item" href="/connection">네비 1</a>
+            <a class="navigation-item" href="/connection">db연결확인</a>
             <a class="navigation-item" href="#">네비 1</a>
             <a class="navigation-item" href="#">네비 1</a>
         </nav>
@@ -34,7 +36,15 @@
                 <span class="dropdown-create"></span>
             </summary>
             <details-menu class="dropdown-menu">
-                <a href="/login" class="dropdown-item">로그인</a>
+                <c:choose>
+                    <c:when test="${empty userData}">
+                        <a href="/login" class="dropdown-item">로그인</a>
+                    </c:when>
+                    <c:when test="${!empty userData}">
+                        <a href="#" class="dropdown-item">마이페이지</a>
+                        <a href="#" class="dropdown-item">로그아웃</a>
+                    </c:when>
+                </c:choose>
             </details-menu>
         </details>
     </div>

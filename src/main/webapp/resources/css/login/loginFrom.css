@@ -1,7 +1,7 @@
 .login{
     height: 100%;
 }
-.login>.default-first-child>.login-title{
+#login-form>    .login-title{
     font-weight: 600;
     font-size: 50px;
     padding: 10px;

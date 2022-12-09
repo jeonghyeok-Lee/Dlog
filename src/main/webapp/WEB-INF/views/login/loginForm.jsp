@@ -22,33 +22,34 @@
 <%--메인 컨텐츠 부분--%>
 <section class="login default-container">
     <div class="default-first-child login-main-container">
-        <div class="login-title">로그인</div>
-        <article class="login-content">
-            <div class="login-userid">
-                <div class="login-title id">UserID</div>
-                <input type="text" placeholder="아이디를 입력해주세요" class="userid login-input">
-            </div>
-            <div class="login-password">
-                <div class="login-title pw">Password</div>
-                <input type="password" class="password login-input">
-            </div>
-            <div class="login-option-first">
-                <div class="autologin">
-                    <input type="checkbox" id="checkbox" class="autologin-checkbox">
-                    <label for="checkbox" class="autologin-title">자동 로그인</label>
+        <form method="post" class="login-form" id="login-form" action="/user/login.do">
+            <div class="login-title">로그인</div>
+            <article class="login-content">
+                <div class="login-userid">
+                    <div class="login-title id">UserID</div>
+                    <input type="text" placeholder="아이디를 입력해주세요" class="userid login-input" name="userId">
                 </div>
-                <div class="find-id-pw">
-                    <a href="#" class="">[아이디/비밀번호 찾기]</a>
+                <div class="login-password">
+                    <div class="login-title pw">Password</div>
+                    <input type="password" class="password login-input" name="userPw">
                 </div>
-            </div>
-            <div class="login-option-second">
-                <a href="/signup" class="login-createUser margin-lr-10">계정 만들기</a>
-                <button class="login-btn" type="submit">
-                    로그인
-                </button>
-            </div>
-        </article>
-
+                <div class="login-option-first">
+                    <div class="autologin">
+                        <input type="checkbox" id="checkbox" class="autologin-checkbox">
+                        <label for="checkbox" class="autologin-title">자동 로그인</label>
+                    </div>
+                    <div class="find-id-pw">
+                        <a href="#" class="">[아이디/비밀번호 찾기]</a>
+                    </div>
+                </div>
+                <div class="login-option-second">
+                    <a href="/signup" class="login-createUser margin-lr-10">계정 만들기</a>
+                    <button class="login-btn" type="submit">
+                        로그인
+                    </button>
+                </div>
+            </article>
+        </form>
     </div>
 </section>
 
