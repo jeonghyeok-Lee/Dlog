@@ -26,13 +26,10 @@ public class UserController {
     @Qualifier("UserServiceImpl")
     private UserService userService;
 
-    @RequestMapping(value = "/getUserList", method = RequestMethod.GET)
-    public String getUserList(Model model) throws Exception{
-        // jsp파일에서 사용할 key-value 설정
-        model.addAttribute("userList", userService.getUserList());
-        return "user/userList";
-    }
+    // 마이페이지로 이동
 
+
+    // 회원 가입 기능
     @RequestMapping(value = "/insertUser", method = RequestMethod.POST)
     public String insertUser(@ModelAttribute("userVO") UserVO userVO, RedirectAttributes rttr) throws Exception{
         userService.insertUser(userVO);
@@ -41,25 +38,8 @@ public class UserController {
         return "redirect:/user/userList";
     }
 
-    @PostMapping("/login.do")
-    public String login(HttpServletRequest request) throws Exception {
-        UserVO userVO = new UserVO();
+    // 회원 수정 기능
 
-        userVO.setUserId(request.getParameter("userId"));
-        userVO.setUserPw(request.getParameter("userPw"));
-
-        int userNo = userService.getLoginUser(userVO);
-        System.out.println("userNo :"+userNo);
-        UserVO userData = userService.getUserInfo(userNo);
-        System.out.println("userData :"+userData);
-        HttpSession session =request.getSession();
-        if (userData != null) {
-            session.setAttribute("userData", userData);
-            return "redirect:../";
-        } else {
-            session.setAttribute("userData", null);
-            return "redirect:../login";
-        }
-    }
+    // 회원 탈퇴 기능
 
 }
