@@ -1,5 +1,4 @@
 package com.dlog.controller.user;
-import com.dlog.domain.vo.user.DictionaryVO;
 import com.dlog.service.MainService;
 import com.dlog.service.admin.NoticeService;
 import com.dlog.service.user.DictionaryService;
@@ -11,12 +10,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.List;
 
 
 // dispathcer-servlet에서 받은 요청을 처리할 핸들러 선택
@@ -73,9 +70,10 @@ public class MainController {
 
 
     // 인기 사전 리스트로 이동
-    @GetMapping("/dictionaryList")
-    public String dictionary() throws Exception{
-        return null;
+    @GetMapping("/dictList")
+    public String dictionary(Model model) throws Exception{
+        model.addAttribute("dictList", dictionaryService.getDictionaryListAll());
+        return "user/dict/popularList";
     }
 
     // 로그인 기능 수행

@@ -34,7 +34,7 @@
             <div class="notification common">
                 <div class="notification-container">
                     <div class="title-name margin-tb-10 margin-lr-10">
-                        <a href="/noticeList" class="">
+                        <a href="/noticeList" class="" style="color: #373a3c">
                             공지사항
                         </a>
                     </div>
@@ -62,7 +62,7 @@
             <div class="popular-list common">
                 <div class="popular-list-container">
                     <div class="title-name  margin-tb-10 margin-lr-10">
-                        <a href="#" class="">
+                        <a href="/dictList" class="" style="color: #373a3c">
                             인기사전
                         </a>
                     </div>

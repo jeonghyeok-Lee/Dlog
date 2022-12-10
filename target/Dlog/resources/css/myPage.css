@@ -1,0 +1,37 @@
+.container{
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+.common{
+    margin-bottom: 20px;
+}
+
+.title{
+    padding-top: 70px;
+    padding-bottom: 40px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.myDictionary-list {
+    border: 1px solid var(--color-container-border);
+    border-top: 3px solid var(--color-container-border);
+}
+
+.title-name{
+    text-align: left;
+    padding-bottom: 10px;
+    border-bottom:1px solid var(--color-container-border);
+}
+
+.contents-list{
+    padding-top:20px;
+    padding-bottom: 20px;
+}
+.non-dictionary{
+    text-align: center;
+}
+.dictionary-contents{
+
+}

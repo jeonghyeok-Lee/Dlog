@@ -24,7 +24,7 @@
             </div>
         </div>
         <nav class="nav">
-            <a class="navigation-item" href="/">네비1</a>
+            <a class="navigation-item" href="/testSignupForm">테스트용 회원가입</a>
             <a class="navigation-item" href="/">네비 1</a>
             <a class="navigation-item" href="/">네비 1</a>
         </nav>
