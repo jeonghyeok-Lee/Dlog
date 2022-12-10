@@ -21,8 +21,8 @@
             <input class="dictionary-search-input" type="text" placeholder="사전 검색">
           </div>
           <ul class="dictionary-list">
-            <c:forEach var="list" items="${dictionaryList}">
-              <div>${list.dName}</div>
+            <c:forEach var="list" items="${dictData}">
+              <a href="#" class="" style="display: block;">${list.dName}</a>
             </c:forEach>
           </ul>
         </div>

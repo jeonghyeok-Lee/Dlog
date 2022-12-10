@@ -1,6 +1,8 @@
 package com.dlog.controller.user;
+import com.dlog.domain.vo.user.DictionaryVO;
 import com.dlog.service.MainService;
 import com.dlog.service.admin.NoticeService;
+import com.dlog.service.user.DictionaryService;
 import com.dlog.service.user.UserService;
 import com.dlog.domain.vo.user.UserVO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 
 // dispathcer-servlet에서 받은 요청을 처리할 핸들러 선택
@@ -32,10 +35,16 @@ public class MainController {
     @Qualifier("UserServiceImpl")
     private UserService userService;
 
+    @Inject
+    @Qualifier("DictionaryServiceImpl")
+    private DictionaryService dictionaryService;
+
     //메인 페이지로 이동
     @GetMapping("/")
     public String mainPage(Model model) throws Exception{
         model.addAttribute("noticeList",noticeService.getNoticeList());
+        // 현재는 있는 모든 사전을 불러오는 형태로 설계됨
+        model.addAttribute("dictList", dictionaryService.getDictionaryListAll());
         return "index";
     }
 
@@ -80,10 +89,13 @@ public class MainController {
         int userNo = userService.getLoginUser(user);
         UserVO userData = userService.getUserInfo(userNo);
 
-        HttpSession session =request.getSession();
+        System.out.println(dictionaryService.getDictionaryList(userNo));
+
+        HttpSession session = request.getSession();
 
         if (userData != null) {
             session.setAttribute("userData", userData);
+            session.setAttribute("dictData",dictionaryService.getDictionaryList(userNo));
             return "redirect:/";
         } else {
             session.setAttribute("userData", null);

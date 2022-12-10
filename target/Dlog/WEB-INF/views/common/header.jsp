@@ -24,9 +24,9 @@
             </div>
         </div>
         <nav class="nav">
-            <a class="navigation-item" href="/connection">db연결확인</a>
-            <a class="navigation-item" href="#">네비 1</a>
-            <a class="navigation-item" href="#">네비 1</a>
+            <a class="navigation-item" href="/">네비1</a>
+            <a class="navigation-item" href="/">네비 1</a>
+            <a class="navigation-item" href="/">네비 1</a>
         </nav>
     </div>
     <div class="header-item" style="display: flex !important; position: relative">
@@ -41,7 +41,7 @@
                         <a href="/loginForm" class="dropdown-item">로그인</a>
                     </c:when>
                     <c:when test="${!empty userData}">
-                        <a href="#" class="dropdown-item">마이페이지</a>
+                        <a href="/user/myPage" class="dropdown-item">마이페이지</a>
                         <a href="/logoutUser" class="dropdown-item">로그아웃</a>
                     </c:when>
                 </c:choose>

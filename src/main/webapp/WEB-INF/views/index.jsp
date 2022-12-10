@@ -68,16 +68,16 @@
                     </div>
                     <div class="contents-list  margin-tb-10 margin-lr-10">
                         <c:choose>
-                            <c:when test="${empty dictionaryList}">
+                            <c:when test="${empty dictList}">
                                 <div class="non-dictionary">인기사전이 없습니다.</div>
                             </c:when>
-                            <c:when test="${!empty dictionaryList}">
-                                < <c:set var="dictionaryLength" value="${dictionaryList.size()}"/>
+                            <c:when test="${!empty dictList}">
+                                <c:set var="dictionaryLength" value="${dictList.size()}"/>
                                 <c:forEach var="dictionary"
-                                           items="${dictionaryList}"
+                                           items="${dictList}"
                                            varStatus="status">
                                     <c:if test="${status.index < 5}">
-                                        <a href="#" class="contents-list-link">${dictionaryList[dictionaryLength-status.count].dictionaryTitle}</a>
+                                        <a href="#" class="contents-list-link">${dictList[dictionaryLength-status.count].dName}</a>
                                     </c:if>
                                 </c:forEach>
                             </c:when>

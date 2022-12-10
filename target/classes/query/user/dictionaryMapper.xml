@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="DictionaryService">
+    <select id="getDictionaryInfo" resultType="DictionaryVO">
+        select *
+        from Dictionary
+        where dNo = #{dNo}
+    </select>
+
+    <select id="getDictionaryListAll" resultType="DictionaryVO">
+        select *
+        from Dictionary
+    </select>
+
+    <select id="getDictionaryList" resultType="DictionaryVO">
+        select *
+        from Dictionary
+        where dUserNo = #{dUserNo}
+    </select>
+
+    <select id="insertDictionary" resultType="DictionaryVO">
+        insert into Dictionary(dName,dUserNo,dTeamNo)
+        values(
+               #{dName},
+               #{dUserNo},
+               #{dTeamNo}
+              )
+    </select>
+
+    <select id="updateDictionary" resultType="DictionaryVO">
+        update Dictionary set
+                              dName = #{dName},
+                              dTeamNo = #{dTeamNo},
+                              dSubscribe = #{dSubscribe},
+                              dPublic = #{dPublic}
+        where dNo = #{dNo}
+    </select>
+
+    <delete id="deleteDictionary" parameterType="int">
+        DELETE FROM Dictionary
+        WHERE dNo = #{dNo}
+    </delete>
+
+
+</mapper>
