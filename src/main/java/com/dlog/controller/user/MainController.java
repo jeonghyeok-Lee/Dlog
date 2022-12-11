@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 
@@ -71,9 +72,9 @@ public class MainController {
     }
 
     @GetMapping("/noticePage/{noticeNo}")
-    public String noticePage(Model model, @ModelAttribute("noticeNo") int noticeNo) throws Exception{
+    public String noticePage(Model model, @ModelAttribute("noticeNo") int noticeNo, HttpServletRequest request, HttpServletResponse response) throws Exception{
         model.addAttribute("noticeList",noticeService.getNoticeList());
-        model.addAttribute("noticePage",noticeService.getNoticeInfo(noticeNo));
+        model.addAttribute("noticePage",noticeService.getNoticeInfo(noticeNo,request,response));
         return "admin/notice/noticePage";
     }
 

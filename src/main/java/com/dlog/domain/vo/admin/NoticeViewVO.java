@@ -8,7 +8,7 @@ public class NoticeViewVO {
     private String userNicName;      // 공지사항 작성자명
     private String noticeTitle;     // 공지사항 제목
     private String noticeContent;   // 공지사항 내용
-    private Date noticeDate;        // 공지사항 작성/수정 날짜
+    private String noticeDate;        // 공지사항 작성/수정 날짜
 
     private int noticeViews;        // 공지사항 조회수
 
@@ -26,7 +26,7 @@ public class NoticeViewVO {
         return noticeContent;
     }
 
-    public Date getNoticeDate() {
+    public String getNoticeDate() {
         return noticeDate;
     }
 
