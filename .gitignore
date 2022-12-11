@@ -9,4 +9,4 @@ gen
 build
 
 # ignore properties file
-database.properties
+**/database.properties
