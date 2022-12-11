@@ -24,20 +24,20 @@
             <div class="signup-header">회원가입</div>
             <div class="signup-body">
                 <form class="signup-form" action="/user/insertUser" method="post" id="signup-form">
-                    <div class="form-rows">
+                    <div class="form-rows row1">
                         <label class="form-col-label" for="signup-id">아이디</label>
                         <input type="text" id="signup-id" name="userId" placeholder="아이디를 입력해주세요" class="signup-input">
                         <button type="button" class="btn" style="margin-left: 1rem">중복확인</button>
                     </div>
-                    <div class="form-rows">
+                    <div class="form-rows row2">
                         <label class="form-col-label" for="signup-name">이름</label>
                         <input type="text" id="signup-name" name="userName" placeholder="이름을 입력해주세요" class="signup-input">
                     </div>
-                    <div class="form-rows">
+                    <div class="form-rows row3">
                         <label for="signup-nicName" class="form-col-label">닉네임</label>
                         <input type="text" id="signup-nicName" name="userNicName" placeholder="닉네임을 입력해주세요" class="signup-input">
                     </div>
-                    <div class="form-rows">
+                    <div class="form-rows row4">
                         <label for="signup-password" class="form-col-label">비밀번호</label>
                         <input type="password" id="signup-password" name="userPw" placeholder="비밀번호를 입력해주세요" class="signup-input">
                         <div style="padding-top: .5rem; padding-left: 1rem">
@@ -45,11 +45,11 @@
                             <label for="signup-password-show">비밀번호 표시</label>
                         </div>
                     </div>
-                    <div class="form-rows">
+                    <div class="form-rows row5">
                         <label for="signup-birth" class="form-col-label">생일</label>
-                        <input type="date" id="signup-birth" name="userBirth">
+                        <input type="text" id="signup-birth"  class="signup-input" name="userBirth" placeholder="ex)1999-07-17">
                     </div>
-                    <div class="form-rows">
+                    <div class="form-rows row6">
                         <label for="signup-gender" class="form-col-label">성별</label>
                         <div style="padding-top: .5rem">
                             <input type="radio" id="signup-gender" name="userGender" value="man" class="">
@@ -58,11 +58,11 @@
                             <label for="signup-gender-female">여자</label>
                         </div>
                     </div>
-                    <div class="form-rows">
+                    <div class="form-rows row7">
                         <label for="signup-email" class="form-col-label">이메일</label>
-                        <input type="email" id="signup-email" name="userEmail" class="signup-input">
+                        <input type="email" id="signup-email" name="userEmail" class="signup-input" placeholder="abcdefg@gmail.com">
                     </div>
-                    <div class="form-rows">
+                    <div class="form-rows row8">
                         <input type="checkbox" id="signup-check" name="userConsent" class="signup-check">
                         <label for="signup-check" class="check-label">이메일 수신 동의</label>
                     </div>
