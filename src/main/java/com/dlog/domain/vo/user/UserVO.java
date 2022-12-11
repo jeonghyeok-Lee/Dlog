@@ -8,10 +8,10 @@ public class UserVO {
     private String userPw;          // 유저 패스워드
     private String userName;        // 유저 이름
     private String userNicName;     // 유저 닉네임
-    private Date userBirth;         // 유저 생일
+    private String userBirth;         // 유저 생일
     private String userEmail;       // 유저 이메일
     private boolean userConsent;    // 유저 동의 여부
-    private Date userAddDate;       // 유저 생성 날짜
+    private String userAddDate;       // 유저 생성 날짜
     private String userMgr;         // 유저 권한
     private String userGender;      // 유저 성별
 
@@ -55,11 +55,11 @@ public class UserVO {
         this.userNicName = userNicName;
     }
 
-    public Date getUserBirth() {
+    public String getUserBirth() {
         return userBirth;
     }
 
-    public void setUserBirth(Date userBirth) {
+    public void setUserBirth(String userBirth) {
         this.userBirth = userBirth;
     }
 
@@ -79,11 +79,11 @@ public class UserVO {
         this.userConsent = userConsent;
     }
 
-    public Date getUserAddDate() {
+    public String getUserAddDate() {
         return userAddDate;
     }
 
-    public void setUserAddDate(Date userAddDate) {
+    public void setUserAddDate(String userAddDate) {
         this.userAddDate = userAddDate;
     }
 
