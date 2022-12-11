@@ -1,0 +1,51 @@
+.ib{
+    display: inline-block;
+}
+#view{
+    width: 80%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0%);
+}
+#view-header{
+    /* display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr;
+    width: 100%; */
+}
+.right{
+    position: absolute;
+    right: 0%;
+}
+.bottom{
+    bottom: 0%;
+}
+.tr{
+    text-align: right;
+}
+.bg{
+    background-color: #999;
+}
+.gray{
+    color: gray;
+}
+.mt{
+    margin-top: 60px;
+    min-height: 50%;
+    height: 50%;
+}
+.ml{
+    margin-left: 20px;
+}
+.mr{
+    margin-right: 20px;
+}
+.w{
+    width: 100%;
+}
+.subtitle{
+    font-size: 13px;
+}
+.bold{
+    font-weight: bold;
+}

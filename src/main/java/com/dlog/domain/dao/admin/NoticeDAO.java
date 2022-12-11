@@ -13,7 +13,7 @@ public interface NoticeDAO {
     public List<NoticeVO> getNoticeListNum() throws Exception;
 
     // 공지사항 정보가져오기
-    public NoticeVO getNoticeInfo(int userNo) throws Exception;
+    public NoticeViewVO getNoticeInfo(int userNo) throws Exception;
 
     // 공지사항 추가
     public int insertNotice(NoticeVO noticeVO) throws Exception;
@@ -23,5 +23,7 @@ public interface NoticeDAO {
 
     // 공지사항 삭제
     public int deleteNotice(int noticeNo) throws  Exception;
+
+    public int updateViewCnt(int noticeNo) throws  Exception;
 
 }

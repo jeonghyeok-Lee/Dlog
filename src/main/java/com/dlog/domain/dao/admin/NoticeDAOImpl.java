@@ -2,6 +2,7 @@ package com.dlog.domain.dao.admin;
 
 import com.dlog.domain.vo.admin.NoticeVO;
 import com.dlog.domain.vo.admin.NoticeViewVO;
+import com.dlog.service.admin.NoticeService;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
@@ -26,7 +27,7 @@ public class NoticeDAOImpl implements NoticeDAO {
 
 
     @Override
-    public NoticeVO getNoticeInfo(int noticeNo) throws Exception {
+    public NoticeViewVO getNoticeInfo(int noticeNo) throws Exception {
         return sqlSession.selectOne("NoticeService.getNoticeInfo",noticeNo);
     }
 
@@ -43,5 +44,10 @@ public class NoticeDAOImpl implements NoticeDAO {
     @Override
     public int deleteNotice(int noticeNo) throws Exception {
         return sqlSession.delete("NoticeService.deleteNotice", noticeNo);
+    }
+
+    @Override
+    public int updateViewCnt(int noticeNo) throws Exception {
+        return sqlSession.update("NoticeService.updateViewCnt",noticeNo);
     }
 }

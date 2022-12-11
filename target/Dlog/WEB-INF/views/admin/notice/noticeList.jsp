@@ -39,63 +39,71 @@
 <%@include file="../../common/header.jsp" %>
 
 
-<div class="container" style="max-width: 1600px">
-  <h2 style="margin-top: 50px; margin-bottom: 20px">공지사항</h2>
+<section class="default-container" style="min-height: 100%">
+  <div class="default-first-child">
+    <div class="container" style="max-width: 1600px">
+      <h2 style="margin-top: 50px; margin-bottom: 20px">공지사항</h2>
 
-  <%--데이터 출력장소--%>
-  <div class="table-responsive">
-    <table class="table table-striped">
-      <thead>
-      <tr>
-        <th>번호</th>
-        <th>제목</th>
-        <th>작성자</th>
-        <th>조회수</th>
-        <th>작성날짜</th>
-      </tr>
-      </thead>
-      <tbody>
-      <c:choose>
-        <%--데이터가 없다면--%>
-        <c:when test="${noticeList == null}">
+      <%--데이터 출력장소--%>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
           <tr>
-            <td colspan="5" align="center">데이터가 없습니다.</td>
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>조회수</th>
+            <th>작성날짜</th>
           </tr>
-        </c:when>
-        <c:when test="${noticeList != null}">
-          <c:set var="noticeLength" value="${noticeList.size()}"/>
-          <c:forEach var="list" items="${noticeList}" varStatus="status">
-            <tr>
-              <td>${noticeList[noticeLength-status.count].noticeNo}</td>
-              <td><a href="#" class="">${noticeList[noticeLength-status.count].noticeTitle}</a></td>
-              <td>${noticeList[noticeLength-status.count].userNicName}</td>
-              <td>${noticeList[noticeLength-status.count].noticeViews}</td>
-              <td>${noticeList[noticeLength-status.count].noticeDate}</td>
-            </tr>
-          </c:forEach>
-        </c:when>
-      </c:choose>
-      </tbody>
-    </table>
+          </thead>
+          <tbody>
+          <c:choose>
+            <%--데이터가 없다면--%>
+            <c:when test="${noticeList == null}">
+              <tr>
+                <td colspan="5" align="center">데이터가 없습니다.</td>
+              </tr>
+            </c:when>
+            <c:when test="${noticeList != null}">
+              <c:set var="noticeLength" value="${noticeList.size()}"/>
+              <c:forEach var="list" items="${noticeList}" varStatus="status">
+                <tr>
+                  <td>${noticeList[noticeLength-status.count].noticeNo}</td>
+                  <td>
+                    <a href="/noticePage/${noticeList[noticeLength-status.count].noticeNo}" class="">
+                        ${noticeList[noticeLength-status.count].noticeTitle}
+                    </a>
+                  </td>
+                  <td>${noticeList[noticeLength-status.count].userNicName}</td>
+                  <td>${noticeList[noticeLength-status.count].noticeViews}</td>
+                  <td>${noticeList[noticeLength-status.count].noticeDate}</td>
+                </tr>
+              </c:forEach>
+            </c:when>
+          </c:choose>
+          </tbody>
+        </table>
+      </div>
+      <%--페이징--%>
+      <%--검색--%>
+      <div class="form-group row justify-content-center">
+        <div style="padding-right:10px">
+          <select class="form-control form-control-sm" name="searchType" id="searchType">
+            <option value="title" <c:if test="${pagination.searchType eq 'title'}">selected</c:if> >제목</option>
+            <option value="content" <c:if test="${pagination.searchType eq 'content'}">selected</c:if>>본문</option>
+            <option value="reg_id" <c:if test="${pagination.searchType eq 'reg_id'}">selected</c:if>>작성자</option>
+          </select>
+        </div>
+        <div style="padding-right:10px">
+          <input type="text" class="form-control form-control-sm" name="keyword" id="keyword" value="${pagination.keyword}">
+        </div>
+        <div>
+          <button class="btn btn-sm btn-primary" name="btnSearch" id="btnSearch">검색</button>
+        </div>
+      </div>
+    </div>
   </div>
-  <%--페이징--%>
-  <%--검색--%>
-  <div class="form-group row justify-content-center">
-    <div style="padding-right:10px">
-      <select class="form-control form-control-sm" name="searchType" id="searchType">
-        <option value="title" <c:if test="${pagination.searchType eq 'title'}">selected</c:if> >제목</option>
-        <option value="content" <c:if test="${pagination.searchType eq 'content'}">selected</c:if>>본문</option>
-        <option value="reg_id" <c:if test="${pagination.searchType eq 'reg_id'}">selected</c:if>>작성자</option>
-      </select>
-    </div>
-    <div style="padding-right:10px">
-      <input type="text" class="form-control form-control-sm" name="keyword" id="keyword" value="${pagination.keyword}">
-    </div>
-    <div>
-      <button class="btn btn-sm btn-primary" name="btnSearch" id="btnSearch">검색</button>
-    </div>
-  </div>
-</div>
+</section>
 
 </body>
 </html>

@@ -25,7 +25,8 @@ public class NoticeServiceImpl implements NoticeService{
     }
 
     @Override
-    public NoticeVO getNoticeInfo(int noticeNo) throws Exception {
+    public NoticeViewVO getNoticeInfo(int noticeNo) throws Exception {
+        noticeDAO.updateViewCnt(noticeNo);  // 조회수 추가를 위함
         return noticeDAO.getNoticeInfo(noticeNo);
     }
 

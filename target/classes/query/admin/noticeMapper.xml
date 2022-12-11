@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="NoticeService">
-    <select id="getNoticeInfo" resultType="NoticeVO">
-        select *
-        from Notice
-        where noticeNo = #{noticeNo}
+    <select id="getNoticeInfo" resultType="NoticeViewVO">
+        select n.noticeNo, u.userNicName , n.noticeTitle, n.noticeContent, n.noticeDate, n.noticeViews
+        from Notice n, User u
+        where n.noticeWriter = u.userNo and noticeNo = #{noticeNo}
     </select>
 
     <select id="getNoticeList" resultType="NoticeViewVO">
@@ -17,25 +17,31 @@
         from Notice
     </select>
 
-    <select id="insertNotice" parameterType="NoticeVO">
+    <insert id="insertNotice" parameterType="NoticeVO">
         insert into Notice(noticeWriter, noticeTitle, noticeContent)
         values (
                 #{noticeWriter},
                 #{noticeTitle},
                 #{noticeContent}
                )
-    </select>
+    </insert>
 
-    <select id="updateNotice" parameterType="NoticeVO">
+    <update id="updateNotice" parameterType="NoticeVO">
         update Notice set
                           noticeWriter = #{noticeWriter},
                           noticeTitle = #{noticeTitle},
                           noticeContent = #{noticeContent}
         where noticeNo = #{noticeNo}
-    </select>
+    </update>
 
     <delete id="deleteUser" parameterType="int">
         DELETE FROM Notice
         WHERE noticeNo = #{noticeNo}
     </delete>
+
+    <update id="updateViewCnt" parameterType="NoticeViewVO">
+        update Notice set
+                          noticeViews = noticeViews+1
+        where noticeNo = #{noticeNo}
+    </update>
 </mapper>

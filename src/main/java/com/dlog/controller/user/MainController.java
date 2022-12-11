@@ -9,7 +9,9 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
@@ -68,6 +70,12 @@ public class MainController {
         return "admin/notice/noticeList";
     }
 
+    @GetMapping("/noticePage/{noticeNo}")
+    public String noticePage(Model model, @ModelAttribute("noticeNo") int noticeNo) throws Exception{
+        model.addAttribute("noticeList",noticeService.getNoticeList());
+        model.addAttribute("noticePage",noticeService.getNoticeInfo(noticeNo));
+        return "admin/notice/noticePage";
+    }
 
     // 인기 사전 리스트로 이동
     @GetMapping("/dictList")

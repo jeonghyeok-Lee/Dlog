@@ -13,7 +13,7 @@ public interface NoticeService {
     // 작성자명이 아닌 작성자 번호로 나오는 형태
     public List<NoticeVO> getNoticeListNum() throws Exception;
 
-    public NoticeVO getNoticeInfo(int noticeNo) throws Exception;
+    public NoticeViewVO getNoticeInfo(int noticeNo) throws Exception;
 
     public void insertNotice(NoticeVO noticeVO) throws Exception;
 
