@@ -5,8 +5,8 @@
 <head>
     <title>Dlog</title>
     <%@include file="common/mainHead.jsp" %>
-    <link href="/resources/css/mainPage.css" rel="stylesheet" type="text/css">
-    <link href="/resources/css/mainSide.css" rel="stylesheet" type="text/css">
+    <link href="/resources/css/every/mainPage.css" rel="stylesheet" type="text/css">
+    <link href="/resources/css/every/mainSide.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <%--header부분 생성--%>

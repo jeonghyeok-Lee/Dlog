@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.inject.Inject;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -91,18 +92,27 @@ public class MainController {
     // request.getSession()을 통해서 세션 생성
     // 조건 절을 통해서 로그인 성공 여부를 구분
     @PostMapping("/loginUser")
-    public String login(UserVO user, HttpServletRequest request) throws Exception {
+    public String login(UserVO user, HttpServletRequest request, HttpServletResponse response) throws Exception {
         System.out.println(user.getUserId());
         int userNo = userService.getLoginUser(user);
         UserVO userData = userService.getUserInfo(userNo);
 
-        System.out.println(dictionaryService.getDictionaryList(userNo));
+        System.out.println(request.getParameter("loginCookie"));
 
+        // 세션
         HttpSession session = request.getSession();
 
         if (userData != null) {
             session.setAttribute("userData", userData);
             session.setAttribute("dictData",dictionaryService.getDictionaryList(userNo));
+
+            if(request.getParameter("loginCookie") !=null){
+                Cookie loginCookie = new Cookie("loginCookie",session.getId());
+                loginCookie.setPath("/");
+                loginCookie.setMaxAge(60 * 60 * 24);
+                response.addCookie(loginCookie);
+            }
+
             return "redirect:/";
         } else {
             session.setAttribute("userData", null);

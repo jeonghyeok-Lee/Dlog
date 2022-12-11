@@ -13,6 +13,7 @@
     <title>로그인 창</title>
     <%@include file="../../common/mainHead.jsp" %>
     <link href="/resources/css/login/loginFrom.css" rel="stylesheet" type="text/css">
+    <script defer src="/resources/js/login/login.js"></script>
 </head>
 <body>
 
@@ -35,7 +36,7 @@
                 </div>
                 <div class="login-option-first">
                     <div class="autologin">
-                        <input type="checkbox" id="checkbox" class="autologin-checkbox">
+                        <input type="checkbox" id="checkbox" name="loginCookie" class="autologin-checkbox">
                         <label for="checkbox" class="autologin-title">자동 로그인</label>
                     </div>
                     <div class="find-id-pw">
