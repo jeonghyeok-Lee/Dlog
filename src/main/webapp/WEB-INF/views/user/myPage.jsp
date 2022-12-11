@@ -12,7 +12,7 @@
 <head>
     <title>마이페이지</title
     <%@include file="../common/mainHead.jsp" %>
-    <link href="/resources/css/mainSide.css" rel="stylesheet" type="text/css">
+    <link href="/resources/css/every/mainSide.css" rel="stylesheet" type="text/css">
     <link href="/resources/css/myPage.css" rel="stylesheet" type="text/css">
 </head>
 <body>

@@ -13,9 +13,9 @@
 <%--bootstrap--%>
 
 <%--common css--%>
-<link href="/resources/css/common.css" rel="stylesheet" type="text/css">
+<link href="/resources/css/every/common.css" rel="stylesheet" type="text/css">
 
 <%--custom css--%>
-<link href="/resources/css/mainHeader.css" rel="stylesheet" type="text/css">
+<link href="/resources/css/every/mainHeader.css" rel="stylesheet" type="text/css">
 
 <%--script--%>
