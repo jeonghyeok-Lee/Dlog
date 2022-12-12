@@ -62,7 +62,7 @@
             <hr class="border border-gray border-3"/>
             <div id="view-path-block" class="ml mr">
                 <!-- 하드코딩 view-url -->
-                <a id="view-url" href="#" class="gray right">http://???.???.???.???:???/???????</a>
+                <a id="view-url" href="#" class="gray right"></a>
             </div>
             <div id="view-content-block" class="ml mr">
                 <!-- 하드코딩 view-content -->

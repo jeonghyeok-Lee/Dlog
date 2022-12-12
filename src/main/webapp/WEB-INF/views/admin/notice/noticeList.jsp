@@ -39,7 +39,7 @@
 <%@include file="../../common/header.jsp" %>
 
 
-<section class="default-container" style="min-height: 100%">
+<section class="default-container" style="height: 100%">
   <div class="default-first-child">
     <div class="container" style="max-width: 1600px">
       <h2 style="margin-top: 50px; margin-bottom: 20px">공지사항</h2>
