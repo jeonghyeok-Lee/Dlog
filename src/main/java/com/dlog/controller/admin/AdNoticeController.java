@@ -1,5 +1,6 @@
 package com.dlog.controller.admin;
 
+import com.dlog.request.notice.NoticeUpdateRequest;
 import com.dlog.service.admin.NoticeService;
 import com.dlog.domain.vo.admin.NoticeVO;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -27,9 +28,21 @@ public class AdNoticeController {
 
     // 공지사항 추가 기능
     @PostMapping(value = "/insertNotice")
-    public  String saveNoticeForm(@ModelAttribute("NoticeVO") NoticeVO noticeVO, RedirectAttributes rttr) throws Exception{
+    public  String saveNoticeForm(NoticeUpdateRequest request, RedirectAttributes rttr) throws Exception{
+
+        System.out.println("request.getTitle : "+request.getTitle());
+        System.out.println("request.getTxt : "+request.getTxt());
+        System.out.println("request.getUserNo : "+request.getUserNo());
+
+        NoticeVO noticeVO = new NoticeVO();
+        noticeVO.setNoticeTitle(request.getTitle());
+        noticeVO.setNoticeContent(request.getTxt());
+        noticeVO.setNoticeWriter(Integer.parseInt(request.getUserNo()));
+
+        System.out.println(noticeVO);
+
         noticeService.insertNotice(noticeVO);
-        return "redirect:admin/notice/noticeForm";
+        return "redirect:/noticeList";
 
     }
 

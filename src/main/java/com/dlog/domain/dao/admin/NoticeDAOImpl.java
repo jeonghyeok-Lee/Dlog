@@ -33,7 +33,7 @@ public class NoticeDAOImpl implements NoticeDAO {
 
     @Override
     public int insertNotice(NoticeVO noticeVO) throws Exception {
-        return sqlSession.selectOne("NoticeService.insertNotice",noticeVO);
+        return sqlSession.insert("NoticeService.insertNotice",noticeVO);
     }
 
     @Override
