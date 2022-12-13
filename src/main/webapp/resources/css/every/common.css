@@ -16,7 +16,12 @@
 
 a{
     text-decoration: none;
-    color:var(--color-a-font);
+    background-color: transparent;
+    color: var(--color-a-font);
+}
+
+a:hover{
+    text-decoration: none;
 }
 
 label{

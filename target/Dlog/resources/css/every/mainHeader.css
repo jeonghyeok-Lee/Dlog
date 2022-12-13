@@ -16,7 +16,7 @@
     flex-wrap: nowrap;  /*부모 너비에 맞게 모두 자동 축소 확장*/
 }
 
-a{
+a:hover{
     text-decoration: none;
     background-color: transparent;
 }
